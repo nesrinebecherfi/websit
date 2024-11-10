@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h2>Tableau de bord d'administration</h2>
+    <h3>Inscription client:</h3>
+    <ul>
+        {% for client in clients %}
+            <li>{{ client.name }} - ID: {{ client.id_number }} - Fixed: {{ client.phone_fixed }} - Mobile: {{ client.phone_mobile }} - Problem: {{ client.problem_type }}</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="/logout">déconnexion</a>
+</body>
+</html>
+<style>
+    body {
+        font-family: Arial, sans-serif; /* نوع الخط */
+        background-color: #f4f4f4;      /* لون خلفية الصفحة */
+        margin: 0;                      /* إزالة الهوامش الافتراضية */
+        padding: 20px;                  /* إضافة مساحة داخلية */
+    }
+    
+    h2 {
+        font-size: 28px;                /* حجم خط العنوان */
+        color: #333;                    /* لون خط العنوان */
+        text-align: center;             /* محاذاة النص في المنتصف */
+    }
+    
+    h3 {
+        font-size: 22px;                /* حجم خط العنوان الفرعي */
+        color: #555;                    /* لون خط العنوان الفرعي */
+        margin-top: 20px;              /* هوامش أعلى */
+    }
+    
+    ul {
+        list-style-type: none;          /* إزالة علامات النقاط من القائمة */
+        padding: 0;                     /* إزالة المساحة الداخلية للقائمة */
+    }
+
+    li {
+        background-color: #fff;         /* لون خلفية عناصر القائمة */
+        border: 1px solid #ddd;         /* حدود خفيفة حول العناصر */
+        border-radius: 4px;             /* زوايا دائرية */
+        padding: 10px;                  /* مساحة داخلية */
+        margin: 10px 0;                 /* هوامش بين العناصر */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    }
+    
+    a {
+        display: inline-block;           /* عرض الرابط كعنصر كتلي */
+        margin-top: 20px;               /* هوامش أعلى */
+        padding: 10px 15px;             /* مساحة داخلية */
+        background-color: #007bff;      /* لون خلفية الرابط */
+        color: #fff;                    /* لون النص */
+        text-decoration: none;           /* إزالة خط التسطير */
+        border-radius: 4px;             /* زوايا دائرية */
+        text-align: center;              /* محاذاة النص في المنتصف */
+    }
+    
+    a:hover {
+        background-color: #0056b3;      /* لون الخلفية عند تمرير الماوس */
+    }
+</style>

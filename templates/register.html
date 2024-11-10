@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Registration</title>
+</head>
+<body>
+    <div class="container">
+    <h2>Inscription des clients</h2>
+    <form method="POST" action="/register">
+        <label for="name">Nom de Client:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="id_number">Num d'Identification:</label>
+        <input type="text" id="id_number" name="id_number" required>
+        <br>
+        <label for="phone_fixed">Num de Téléphone Fix:</label>
+        <input type="text" id="phone_fixed" name="phone_fixed" required>
+        <br>
+        <label for="phone_mobile">Num de Téléphone Mobile:</label>
+        <input type="text" id="phone_mobile" name="phone_mobile" required>
+        <br>
+        
+        <h3>Type de probléme:</h3>
+        <label>
+            <input type="radio" name="problem_type" value="Fix" required> Fixe
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="problem_type" value="Idoom ADSL" required> Idoom ADSL
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="problem_type" value="Idoom Fibre" required> Idoom Fibre
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="problem_type" value="Idoom 4GLTE" required> Idoom 4GLTE
+        </label>
+        <br>
+
+        <button type="submit">Inscrit</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+</body>
+</html>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333333;
+}
+
+label {
+  font-size: 14px;
+  color: #555555;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+</style>
+ 
